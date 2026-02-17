@@ -3,8 +3,21 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Field, FieldDescription, FieldGroup, FieldLabel, FieldSeparator } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
+import { signIn } from '@/lib/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export function LoginForm({ className, ...props }: React.ComponentProps<'div'>) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const fromPath = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname ?? '/page2';
+
+  const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    signIn();
+    navigate(fromPath, { replace: true });
+  };
+
   return (
     <div className={cn('flex flex-col gap-6', className)} {...props}>
       <Card>
@@ -13,7 +26,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<'div'>) 
           <CardDescription>Login with your Google account</CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleLogin}>
             <FieldGroup>
               <Field>
                 <Button variant="outline" type="button">
