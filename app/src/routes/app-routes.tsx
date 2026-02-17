@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from '@/pages/home-page';
 import LoginPage from '@/pages/login-page';
 import NotFoundPage from '@/pages/not-found-page';
 import Page2 from '@/pages/page2';
@@ -13,7 +14,7 @@ export function AppRoutes() {
       </Route>
 
       <Route element={<PrivateRoute />}>
-        <Route path="/" element={<Navigate to="/page2" replace />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/page2" element={<Page2 />} />
       </Route>
 

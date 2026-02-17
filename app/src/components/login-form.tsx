@@ -10,7 +10,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<'div'>) 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const fromPath = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname ?? '/page2';
+  const fromPath = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname ?? '/';
 
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
