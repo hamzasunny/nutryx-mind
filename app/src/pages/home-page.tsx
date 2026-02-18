@@ -8,7 +8,7 @@ import { WeeklyCaloriesCard } from '@/components/home/weekly-calories-card';
 export default function HomePage() {
   return (
     <div className="min-h-svh">
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-5 p-6">
+      <main className="mx-auto flex w-full max-w-6xl flex-col gap-5 p-4 sm:p-6">
         <HomeHeader today={new Date()} />
 
         <section className="grid gap-6 lg:grid-cols-2" aria-label="Daily summary">
