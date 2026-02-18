@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
+import { MobileBottomNav } from '@/components/layout/mobile-bottom-nav';
 import { isAuthenticated } from '@/lib/auth';
 
 type PrivateRouteProps = {
@@ -14,5 +15,10 @@ export function PrivateRoute({ children }: PrivateRouteProps) {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
-  return children ?? <Outlet />;
+  return (
+    <div className="min-h-svh pb-20">
+      {children ?? <Outlet />}
+      <MobileBottomNav />
+    </div>
+  );
 }

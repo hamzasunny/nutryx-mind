@@ -9,7 +9,7 @@ type PublicRouteProps = {
 
 export function PublicRoute({ children }: PublicRouteProps) {
   if (isAuthenticated()) {
-    return <Navigate to="/page2" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children ?? <Outlet />;
