@@ -5,7 +5,6 @@ import HomePage from '@/pages/home-page';
 import LoginPage from '@/pages/login-page';
 import LogMealPage from '@/pages/log-meal-page';
 import NotFoundPage from '@/pages/not-found-page';
-import Page2 from '@/pages/page2';
 import ProfilePage from '@/pages/profile-page';
 import { PrivateRoute } from '@/routes/guards/private-route';
 import { PublicRoute } from '@/routes/guards/public-route';
@@ -22,7 +21,6 @@ export function AppRoutes() {
         <Route path="/log-meal" element={<LogMealPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/page2" element={<Page2 />} />
       </Route>
 
       <Route path="*" element={<NotFoundPage />} />
