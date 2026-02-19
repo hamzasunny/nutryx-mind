@@ -15,8 +15,7 @@ export default defineConfig({
       manifest: {
         name: 'Nutryx Mind',
         short_name: 'Nutryx',
-        description:
-          'Nutryx Mind is an AI-powered Progressive Web App for calorie tracking and personalized health insights.',
+        description: 'Nutryx Mind is an AI-powered Progressive Web App for calorie tracking and personalized health insights.',
         theme_color: '#111827',
         background_color: '#ffffff',
         display: 'standalone',
